@@ -34,11 +34,11 @@ class CachedMentionReader(DatasetReader):
                 sentence_str, span_str, type_list_str = line.strip().split('\t')
                 token_left_str, token_right_str = span_str.split(':')
                 token_left, token_right = int(token_left_str), int(token_right_str)
-                token_list = sentence_str.split(' ')
+                token_list = [c for c in sentence_str]
                 span_text = token_list[token_left:token_right]
                 subtoken_list, mapping = self.contextualizer.tokenize_with_mapping(token_list)
 
-                subtoken_left = bisect_left(mapping, token_left)
+                subtoken_left = bisect_left(mapping, token_left - 1)
                 subtoken_right = bisect_right(mapping, token_right - 1)
                 if subtoken_right == subtoken_left:
                     subtoken_right += 1

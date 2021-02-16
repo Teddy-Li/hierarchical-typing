@@ -36,9 +36,13 @@ class HuggingFaceContextualizer(Contextualizer):
         tokens = []
         mapping = []
         for i, t in enumerate(sentence):
+            count = 0
             for wp in self.hf_tokenizer.tokenize(t):
                 tokens.append(wp)
                 mapping.append(i)
+                count += 1
+            if count > 1:
+                print(f"Tokenized into multiple tokens: {t}")
 
         token_indices = self.hf_tokenizer.convert_tokens_to_ids(tokens)
         token_indices_with_special_symbols = self.hf_tokenizer.build_inputs_with_special_tokens(token_indices)
