@@ -6,6 +6,7 @@ import numpy as np
 from fire import Fire
 import sys
 from colors import blue
+sys.path.append('/home/parallels/Desktop/Parallels Shared Folders/Home/PycharmProjects/hierarchical-typing')
 
 from hiertype.contextualizers import Contextualizer, get_contextualizer
 from hiertype.data import StringNdArrayBerkeleyDBStorage
@@ -16,7 +17,7 @@ T = TypeVar('T', covariant=True)
 def get_spans(lines: Iterator[str]) -> Iterator[Tuple[List[str], int, int]]:
     for line in lines:
         sentence, span, *_ = line.split('\t')
-        tokens = sentence.split(' ')
+        tokens = [c for c in sentence]
         l_str, r_str = span.split(':')
         l = int(l_str)
         r = int(r_str)
@@ -89,8 +90,13 @@ def main(*,
         tokenizer_only=False
     )
     dump = StringNdArrayBerkeleyDBStorage.open(output, mode='w')
+    print(input)
+    line_fp = open(input, mode='r', encoding='utf8')
+    for line in line_fp:
+        print(line)
+    line_fp.close()
 
-    lines: Iterator[str] = tqdm(open(input, mode='r'))
+    lines: Iterator[str] = tqdm(open(input, mode='r', encoding='utf8'))
     spans: Iterator[Tuple[List[str], int, int]] = get_spans(lines)
 
     i = 0

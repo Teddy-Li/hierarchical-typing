@@ -26,12 +26,13 @@ global {
   thresholdRatio=(ThresholdRatio: 0.05 0.1 0.15 0.2 0.25)
   metric="+O_MiF"
 
-  contextualizer=(Contextualizer: elmo-original bert-base-cased xlm-roberta-base)
+  contextualizer=(Contextualizer: elmo-original bert-base-cased xlm-roberta-base chinese-bert-base-chinese)
 
   layers=(Contextualizer:
     elmo-original="[0,1,2]"
     bert-base-cased="[0,10,11,12]"
     xlm-roberta-base="[0,10,11,12]"
+    chinese-bert-base-chinese="[0,10,11,12]"
   )
 
   inputDim=3072

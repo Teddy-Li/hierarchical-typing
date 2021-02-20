@@ -19,6 +19,9 @@ def get_contextualizer(
     if model_name.startswith("bert"):
         return BERTContextualizer.from_model(model_name, device, tokenizer_only=tokenizer_only)
 
+    elif model_name.startswith("chinese"):
+        return BERTContextualizer.from_model(model_name[8:], device, tokenizer_only=tokenizer_only)
+
     elif model_name.startswith("xlm-roberta"):
         return XLMRobertaContextualizer.from_model(model_name, device, tokenizer_only=tokenizer_only)
 

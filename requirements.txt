@@ -16,7 +16,7 @@ colorama==0.4.3
 conllu==0.11
 cycler==0.10.0
 cymem==2.0.3
-dataclasses==0.7
+dataclasses==0.6
 docutils==0.15.2
 editdistance==0.5.3
 filelock==3.0.12
@@ -76,8 +76,8 @@ responses==0.10.16
 rsa==4.5
 s3transfer==0.3.3
 sacremoses==0.0.43
-scikit-learn==0.22.2
-scipy==1.5.2
+scikit-learn==0.22
+scipy
 sentencepiece==0.1.91
 six==1.15.0
 sklearn==0.0
@@ -110,3 +110,4 @@ word2number==1.1
 zipp==3.1.0
 zope.event==4.4
 zope.interface==5.1.0
+
