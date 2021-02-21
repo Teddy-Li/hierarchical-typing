@@ -6,7 +6,7 @@ import numpy as np
 from fire import Fire
 import sys
 from colors import blue
-sys.path.append('/home/parallels/Desktop/Parallels Shared Folders/Home/PycharmProjects/hierarchical-typing')
+sys.path.append('../../')
 
 from hiertype.contextualizers import Contextualizer, get_contextualizer
 from hiertype.data import StringNdArrayBerkeleyDBStorage
