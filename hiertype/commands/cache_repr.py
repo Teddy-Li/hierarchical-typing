@@ -91,10 +91,6 @@ def main(*,
     )
     dump = StringNdArrayBerkeleyDBStorage.open(output, mode='w')
     print(input)
-    line_fp = open(input, mode='r', encoding='utf8')
-    for line in line_fp:
-        print(line)
-    line_fp.close()
 
     lines: Iterator[str] = tqdm(open(input, mode='r', encoding='utf8'))
     spans: Iterator[Tuple[List[str], int, int]] = get_spans(lines)
