@@ -57,6 +57,8 @@ class HuggingFaceContextualizer(Contextualizer):
 
         bsz = len(indexed_sentences)
         lengths = [len(s) for s in indexed_sentences]
+        if max(lengths) > 512:
+            print("!")
         indices_tensor = torch.zeros(bsz, max(lengths), dtype=torch.int64)
         input_mask = torch.zeros(bsz, max(lengths), dtype=torch.int64)
 

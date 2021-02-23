@@ -1,0 +1,4 @@
+python /Users/teddy/PycharmProjects/NE_pipeline/extract_typed_triples.py --mode FMTNET --net_to_convert_path /Users/teddy/PycharmProjects/cfet_both_layer/cfet_data/data/crowdsourced_with_figer.json --net_converted_path /Users/teddy/PycharmProjects/hierarchical-typing/data/cfet/crowdsourced.tsv --lined 1
+python /Users/teddy/PycharmProjects/NE_pipeline/extract_typed_triples.py --mode FMTNET --net_to_convert_path /Users/teddy/PycharmProjects/cfet_both_layer/cfet_data/data/wiki_with_figer.json --net_converted_path /Users/teddy/PycharmProjects/hierarchical-typing/data/cfet/wiki.tsv --lined 1
+
+echo "Finished!"

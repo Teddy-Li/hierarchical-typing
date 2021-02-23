@@ -4,6 +4,7 @@ import logging
 import torch
 import json
 import sys
+sys.path.append('/disk/scratch_big/tli/hierarchical-typing/')
 import numpy as np
 import random
 from colors import blue

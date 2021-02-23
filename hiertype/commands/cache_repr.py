@@ -104,12 +104,7 @@ def main(*,
             for sentence in sentences
         ])
 
-        try:
-            encoded = contextualizer.encode(tokenized_sentences, frozen=True)
-        except Exception as e:
-            print(e)
-            print(sentences)
-            raise
+        encoded = contextualizer.encode(tokenized_sentences, frozen=True)
 
         for emb in select_embeddings(encoded, mappings, layers, unit):
             x: np.ndarray = emb.detach().cpu().numpy()

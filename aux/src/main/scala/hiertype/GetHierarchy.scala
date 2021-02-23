@@ -1,6 +1,8 @@
 package hiertype
 
+
 import scala.collection._
+import scala.collection.mutable._
 import scala.collection.JavaConverters._
 
 import me.tongfei.progressbar._
